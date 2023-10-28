@@ -17,7 +17,7 @@
 <br>
 
 <p align="center">
-  <img alt="Logo EzPoint" src="https://github.com/rodriguezruan/Images/blob/main/assets/_60c44d95-b1f6-46e5-aabd-c6a83f9cd9c2-removebg-preview.png?raw=true" width="100%">
+  <img alt="Logo EzPoint" src="https://github.com/rodriguezruan/Images/blob/main/assets/_82c68e72-727e-4a50-8df8-056d5b377f9c-removebg-preview.png?raw=true" width="100%">
 </p>
 
 ## 🚀 Tecnologias
