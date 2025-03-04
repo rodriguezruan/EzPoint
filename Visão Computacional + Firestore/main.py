@@ -14,7 +14,7 @@ cmd = None
 cargo = None
 
 # Inicialize a conexão com o Firestore
-cred = credentials.Certificate('ezpoint-cd326-firebase-adminsdk-6yfjv-7e14cc16f2.json')
+cred = credentials.Certificate('ezpoint-cd326-firebase-adminsdk-6yfjv-7e14cc16f2.json') #chave de acesso ao banco de dados
 app = firebase_admin.initialize_app(cred)
 db = firestore.client()
 
@@ -32,26 +32,16 @@ cargos_permitidos = {
     "Soldador": [0, 1],  # '0' é 'capacete' e '1' é 'colete'
 }
 
-# Loop para ler e processar dados da porta serial
-
-# Os dados decodificados estão agora armazenados na variável 'dados_decodificados'
-#print(f'Dados decodificados armazenados: {dados_decodificados}')
-
-# restante do seu código, incluindo o loop de processamento de imagem da webcam
-# ...
-
 #start webcam--------------------------
 cap = cv2.VideoCapture(0)
 cap.set(3, 640)
 cap.set(4, 480)
 #--------------------------------------
 
-# model
-#model = YOLO("epiconfig.pt")
+# modelo
 model = YOLO("datsetpropriov2.pt")
 
 # object classes
-#classNames = ["Excavator", "Gloves", "Hardhat", "Ladder", "Mask", "NO-Hardhat", "NO-Mask", "NO-Safety Vest", "Person", "SUV", "Safety Cone", "Safety Vest", "bus", "dump truck", "fire hydrant", "machinery", "mini-van", "sedan", "semi", "trailer", "truck and trailer", "truck", "van", "vehicle", "wheel loader"]
 classNames = ['capacete', 'colete', 'luvas', 'mascara', 'oculos']
 
 #DEFINIÇÃO DE FUNÇÕES--------------------------------------
@@ -134,13 +124,6 @@ while processar_imagem:
 
     # Variável para verificar se uma pessoa foi detectada com confiança suficiente
     person_detected = False
-
-    # coordinates
-    #start webcam--------------------------
-    #cap = cv2.VideoCapture(0)
-    #cap.set(3, 640)
-    #cap.set(4, 480)
-    #--------------------------------------
 
     detected_helmet = False
     detected_vest = False
